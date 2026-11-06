@@ -2,37 +2,30 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
+\usepackage[a4paper,margin=2.5cm,headheight=15pt]{geometry}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
-\usepackage{geometry}
-\geometry{margin=2cm}
 \usepackage{enumitem}
 \usepackage{float}
+\usepackage{caption}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
-\usepackage{siunitx} % <-- AJOUTÉ : indispensable pour les commandes \SI
+\usepackage{siunitx}
+\usepackage{hyperref}
+
+\sisetup{output-decimal-marker={,}}
+
 \pagestyle{fancy}
-
-
-% Nettoyer les styles par défaut
 \fancyhf{}
+\fancyhead[L]{Fiches d'exercices pour Maximilien (9)}
+\fancyhead[R]{Matteo Dubresson}
+\fancyfoot[C]{\thepage}
 
-% En-têtes
-\fancyhead[L]{Fiches d'exercices pour Maximilien (8)} % à gauche
-\fancyhead[R]{Matteo Dubresson} % à droite
-
-% Pieds de page
-\fancyfoot[C]{\thepage} % numéro de page centré
-
-%Titre et généralités
-\title{Fiche d'exercices \\ pour Maximilien (8)}
-\date{28/10/2026}
+\title{Fiche d'exercices \\ pour Maximilien (9)}
+\date{8/11/2026}
 \author{}
 
-%Espace entre les subsections
 \titlespacing*{\subsection}{0pt}{5ex plus 0.5ex minus 0.2ex}{1.5ex plus 0.2ex}
-
-
 
 
 \begin{document}
@@ -138,6 +131,175 @@ On suppose à présent une configuration ou le son sortirai à travers deux ence
 \end{enumerate}
 
 \newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Exercice 2 : (Polynésie 2020)}
+
+L'observation des astres lointains comme les exoplanètes s'améliore. Dans la plupart des cas, le recours à une méthode indirecte est nécessaire. Des méthodes de détection directe sont aujourd'hui cependant possibles grâce à l'utilisation de l'optique adaptative. En effet cette technique permet de corriger les déformations des images dues aux perturbations atmosphériques.
+
+\bigskip
+
+\textbf{1.Nécessité de l'optique adaptative }
+
+\bigskip
+
+\begin{minipage}{0.92\textwidth}
+Les photographies de planètes tournant autour d'autres étoiles que le Soleil sont rares en raison de leur extraordinaire éloignement qui les rend pour la plupart invisibles à nos yeux, même avec les plus puissants télescopes du monde.
+
+En Arizona, le Large Binocular Telescope (LBT) a fourni une image inédite du système de l'étoile HR 8799. Ce dernier, situé à 130 années-lumière de la Terre dans la constellation de Pégase, compte au moins quatre planètes, la plus proche de l'étoile HR 8799 étant à une distance de 24 unités astronomiques de celle-ci. Ces astres ont pu être observés relativement facilement car ils sont presque aussi lumineux en infrarouge que l'étoile qui les éclaire et ont une taille plus grande que celle de Jupiter.
+
+Existe-t-il, autour de l'étoile HR 8799, d'autres planètes plus petites, plus proches de leur étoile et de plus faible signature infrarouge, comme la Terre, Vénus ou Mars~?
+
+\begin{flushright}
+\small\textit{D'après un article de la revue Sciences et vie}
+\end{flushright}
+\end{minipage}
+
+\textbf{Données :}
+\begin{itemize}[nosep]
+  \item Une unité astronomique vaut $150 \times 10^{9}$~m
+  \item Une année de lumière vaut $9{,}5 \times 10^{15}$~m
+  \item Célérité de la lumière dans le vide : $c = 3{,}0 \times 10^{8}$~m.s$^{-1}$
+\end{itemize}
+
+\medskip
+
+\begin{description}[leftmargin=1.5cm, labelwidth=1.2cm, labelsep=0.3cm, font=\normalfont]
+  \item[1.1.] L'image d'un point donnée par un instrument d'optique n'est pas un point, mais une tache entourée d'anneaux. Cette figure est appelée tache d'Airy.\\
+  Comment appelle-t-on ce phénomène~?\\
+  Quels sont les paramètres qui influent sur ce phénomène~?
+\end{description}
+
+% ---------- IMAGE : tache d'Airy ----------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{image5.png}
+  \caption*{Tache d'Airy}
+\end{figure}
+
+\begin{description}[leftmargin=1.5cm, labelwidth=1.2cm, labelsep=0.3cm, font=\normalfont]
+  \item[1.2.] À partir des données de l'énoncé, calculer l'angle $\theta$ entre les directions d'observation de l'étoile HR 8799 et de sa planète la plus proche, schématisées ci-dessous.
+\end{description}
+
+% ---------- IMAGE : schéma œil / planète / étoile ----------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{image6.png}
+  \caption*{Schéma œil / planète / étoile}
+\end{figure}
+
+\begin{description}[leftmargin=1.5cm, labelwidth=1.2cm, labelsep=0.3cm, font=\normalfont]
+  \item[1.3.] La performance d'un instrument d'optique dépend de sa capacité à distinguer deux points proches.
+
+  On appelle pouvoir de résolution $\theta_R$ d'un instrument d'optique, l'écart angulaire minimal entre deux points que l'instrument peut séparer. Il est défini par la relation : $\theta_R = \dfrac{1{,}22\,\lambda}{D}$ où $D$ est le diamètre de l'instrument d'optique et $\lambda$, la longueur d'onde de la lumière reçue.
+
+  Selon la valeur de l'angle $\theta$ entre les directions d'observation de deux points lumineux, on observera les images suivantes :
+\end{description}
+
+% ---------- IMAGES : trois taches d'Airy ----------
+\begin{center}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{ccc}
+  \includegraphics[width=0.3\textwidth]{image7.png} &
+  \includegraphics[width=0.3\textwidth]{image8.png} &
+  \includegraphics[width=0.3\textwidth]{image9.png} \\
+  $\theta < \theta_R$ & $\theta = \theta_R$ & $\theta > \theta_R$
+\end{tabular}
+\end{center}
+
+\begin{flushright}
+\small D'après le site \url{www.sciencesetavenir.fr}
+\end{flushright}
+
+\begin{description}[leftmargin=1.5cm, labelwidth=1.2cm, labelsep=0.3cm, font=\normalfont]
+  \item[] Le télescope LBT a un diamètre de \SI{8,4}{m} mais, en raison des perturbations atmosphériques, son pouvoir de résolution est équivalent à celui d'un télescope de \SI{20}{cm}, pour une longueur d'onde d'observation de \SI{1000}{nm}.
+
+  Montrer la nécessité d'avoir recours à l'optique adaptative.
+\end{description}
+
+\bigskip
+
+\textbf{2.L'effet Doppler-Fizeau pour étudier les objets célestes}
+
+\bigskip
+
+\begin{minipage}{0.92\textwidth}
+La présence d'une exoplanète peut induire un mouvement circulaire de son étoile. C'est l'étude du mouvement de cette étoile qui permet de détecter l'exoplanète par la méthode dite «~de la vitesse radiale~» en s'appuyant sur l'effet Doppler-Fizeau.
+
+Dans cette étude, on suppose la Terre et le centre O de la trajectoire de l'étoile immobiles. On se place dans le cas où la trajectoire de l'étoile et la Terre sont dans le même plan.
+
+La vitesse radiale est la composante $\overrightarrow{V_R}$ suivant la direction Terre-étoile de la vitesse $\vec{V}$ de l'étoile.
+\end{minipage}
+
+% ---------- IMAGE : trajectoire circulaire de l'étoile ----------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{image10.png}
+  \caption*{Trajectoire circulaire de l'étoile}
+\end{figure}
+
+\medskip
+\textbf{Effet Doppler-Fizeau observé en astrophysique}
+
+Lorsqu'une étoile se rapproche ou s'éloigne de la Terre, le spectre de la lumière reçue sur la Terre est décalé par rapport au spectre de la lumière émise par l'étoile.
+
+Décalage vers le bleu ou décalage vers le rouge :
+
+% ---------- IMAGE : schéma Doppler (a, b, c) + spectres ----------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{image11.png}
+  \caption*{Schéma Doppler (a, b, c) + spectres}
+\end{figure}
+
+Si l'étoile a une vitesse radiale nulle par rapport à la Terre, la fréquence d'une onde électromagnétique reçue sur la Terre est la même que celle de l'onde émise (cas a).
+
+La vitesse de l'étoile étant beaucoup plus petite que la vitesse $c$ de la lumière, le décalage de longueur d'onde observé $\Delta\lambda$ s'exprime selon la relation :
+\[
+  \frac{\Delta\lambda}{\lambda_0} = \frac{|\lambda - \lambda_0|}{\lambda_0} = \frac{V_R}{c}
+\]
+où $\lambda$ est la longueur d'onde mesurée par l'observateur, $\lambda_0$ la longueur d'onde de la lumière émise par la source au repos et $V_R$ la vitesse radiale de la source de l'onde.
+
+\begin{description}[leftmargin=1.5cm, labelwidth=1.2cm, labelsep=0.3cm, font=\normalfont]
+  \item[2.1.] Expliquer qualitativement, à partir de l'analyse du schéma précédent, le décalage vers le bleu et le décalage vers le rouge.
+
+  \item[2.2.] Reproduire le schéma de la trajectoire de l'étoile ci-avant en indiquant l'ensemble des positions pour lesquelles :
+  \begin{itemize}[nosep]
+    \item le spectre n'est pas décalé ;
+    \item le spectre est décalé vers le bleu ;
+    \item le spectre est décalé vers le rouge.
+  \end{itemize}
+  Justifier en traçant le vecteur vitesse de l'étoile pour trois positions particulières correspondant à chacun des trois cas.
+
+  \item[2.3.] Sur le spectre de l'étoile HD 2665 ci-dessous, on observe la raie H$_\beta$ de l'hydrogène, dont la longueur d'onde mesurée en laboratoire est $\lambda_0 = \SI{486,1}{nm}$.
+\end{description}
+
+% ---------- IMAGE : spectre de l'étoile HD 2665 ----------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{image12.png}
+  \caption*{Spectre de l'étoile HD 2665}
+\end{figure}
+
+\begin{flushright}
+\small \url{http://atlas.obs-hp.fr/elodie}
+\end{flushright}
+
+\begin{description}[leftmargin=1.5cm, labelwidth=1.2cm, labelsep=0.3cm, font=\normalfont]
+  \item[] Déterminer la vitesse radiale de l'étoile et expliquer si celle-ci s'éloigne ou se rapproche de la Terre au moment où le spectre est enregistré.
+\end{description}
 
 
 
